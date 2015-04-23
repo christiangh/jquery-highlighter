@@ -1,0 +1,53 @@
+/** HIGHLIGHTING ANIMATION **/
+.highlighter_go{
+    -webkit-animation: highlighting 3000ms ease-in-out forwards;
+    -moz-animation: highlighting 3000ms ease-in-out forwards;
+    animation: highlighting 3000ms ease-in-out forwards;
+    background: transparent;
+	background: -webkit-linear-gradient(90deg, transparent 50%, #FFFF00 50%);
+	background: -moz-linear-gradient(90deg, transparent 50%, #FFFF00 50%);
+	background: -o-linear-gradient(90deg, transparent 50%, #FFFF00 50%);
+	background: linear-gradient(90deg, transparent 50%, #FFFF00 50%);
+	background-repeat: repeat;
+	-webkit-background-size: 200% 100%;
+	-moz-background-size: 200% 100%;
+	background-size: 200% 100%;
+    background-position: 0 0;
+	-webkit-transition: all .5s linear;
+	-moz-transition: all .5s linear;
+	-o-transition: all .5s linear;
+	transition: all .5s linear;
+    padding: 0 2px;
+    margin: 0 -2px;
+}
+
+@-webkit-keyframes highlighting{
+    from{
+        background-position: 0 0;
+    }
+    
+    to{
+        background-position: -100% 0;
+    }
+}
+
+@-moz-keyframes highlighting{
+    from{
+        background-position: 0 0;
+    }
+    
+    to{
+        background-position: -100% 0;
+    }
+}
+
+@keyframes highlighting{
+    from{
+        background-position: 0 0;
+    }
+    
+    to{
+        background-position: -100% 0;
+    }
+}
+/** UNDERLINING ANIMATION **/

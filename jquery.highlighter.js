@@ -11,10 +11,18 @@
             }
             
             var settings = $.extend({}, defaults, options);
-            
+
+            // Accept numeric strings; fall back to defaults on invalid or negative values
+            var toTime = function(value, fallback){
+                var n = parseInt(value, 10);
+                return (isNaN(n) || n < 0) ? fallback : n;
+            };
+            settings.duration = toTime(settings.duration, defaults.duration);
+            settings.pauseTime = toTime(settings.pauseTime, defaults.pauseTime);
+
             var start = function(selection){
                 /** DURATION **/
-                if( settings.duration != defaults.duration && settings.duration === parseInt(settings.duration, 10) || settings.timing != defaults.timing){
+                if( settings.duration !== defaults.duration || settings.timing !== defaults.timing ){
                     $(selection).css('animation', 'highlighting '+ settings.duration +'ms '+ settings.timing +' forwards');
                 }
                 

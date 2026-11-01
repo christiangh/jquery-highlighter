@@ -52,10 +52,12 @@
             }else{
                 start(this);
             }
+
+            return this;
         },
         clear : function() {
-            $(this).removeClass("highlighter_go")
-                   .css('background', '');
+            return $(this).removeClass("highlighter_go")
+                          .css('background', '');
         }
     };
     

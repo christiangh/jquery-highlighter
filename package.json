@@ -1,0 +1,30 @@
+{
+  "name": "jquery-highlighter",
+  "version": "1.0.0",
+  "description": "jQuery plugin to highlight text with animations",
+  "main": "jquery.highlighter.js",
+  "style": "css/jquery.highlighter.css",
+  "files": [
+    "jquery.highlighter.js",
+    "jquery.highlighter.min.js",
+    "css/"
+  ],
+  "scripts": {
+    "build": "terser jquery.highlighter.js -c -m -o jquery.highlighter.min.js"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "highlight",
+    "highlighter",
+    "animation"
+  ],
+  "author": "Christian Garcia",
+  "license": "MIT",
+  "peerDependencies": {
+    "jquery": ">=1.7"
+  },
+  "devDependencies": {
+    "terser": "^5.51.2"
+  }
+}

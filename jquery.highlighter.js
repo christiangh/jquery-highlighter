@@ -1,4 +1,6 @@
-(function($){
+;(function($){
+    'use strict';
+
     var methods = {
         init : function(options) {
             var defaults = {
@@ -89,5 +91,5 @@
         } else {
             $.error( 'Method ' +  options + ' does not exist on jQuery.highlighter' );
         }
-    }
-})(jQuery)
+    };
+})(jQuery);

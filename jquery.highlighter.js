@@ -34,17 +34,21 @@
                 }
                 
                 /** GO! **/
-                $(selection).addClass('highlighter_go');
+                // Force reflow so the animation restarts after a previous clear
+                $(selection).each(function(){ void this.offsetWidth; })
+                            .addClass('highlighter_go');
             }
             
             if(settings['queue'] === true){
                 var time = 0;
                 
                 $(this).each(function(index, element){
-                    if(!$(element).hasClass('highlighter_go')){
-                        setTimeout( function(){
+                    if(!$(element).hasClass('highlighter_go') && !$(element).data('highlighterTimer')){
+                        var timer = setTimeout( function(){
+                            $(element).removeData('highlighterTimer');
                             start(element);
                         }, time);
+                        $(element).data('highlighterTimer', timer);
                         
                         time += settings.pauseTime+settings.duration;
                     }
@@ -56,8 +60,15 @@
             return this;
         },
         clear : function() {
-            return $(this).removeClass("highlighter_go")
-                          .css('background', '');
+            return $(this).each(function(){
+                              var timer = $(this).data('highlighterTimer');
+                              if(timer){
+                                  clearTimeout(timer);
+                                  $(this).removeData('highlighterTimer');
+                              }
+                          })
+                          .removeClass("highlighter_go")
+                          .css({ animation: '', background: '' });
         }
     };
     

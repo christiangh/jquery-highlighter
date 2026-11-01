@@ -36,11 +36,7 @@
                     newColorTo = settings.colorTo;
                 }
                 if( newColorFrom != '' || newColorTo != '' ){
-                    $(selection).css('background', newColorFrom)
-                        .css('background', '-webkit-linear-gradient(90deg, '+ newColorFrom +' 50%, '+ newColorTo +' 50%) repeat scroll 0 0 / 200% 100% rgba(0, 0, 0, 0)')
-                        .css('background', '-moz-linear-gradient(90deg, '+ newColorFrom +' 50%, '+ newColorTo +' 50%) repeat scroll 0 0 / 200% 100% rgba(0, 0, 0, 0)')
-                        .css('background', '-o-linear-gradient(90deg, '+ newColorFrom +' 50%, '+ newColorTo +' 50%) repeat scroll 0 0 / 200% 100% rgba(0, 0, 0, 0)')
-                        .css('background', 'linear-gradient(90deg, '+ newColorFrom +' 50%, '+ newColorTo +' 50%) repeat scroll 0 0 / 200% 100% rgba(0, 0, 0, 0)');
+                    $(selection).css('background', 'linear-gradient(90deg, '+ newColorFrom +' 50%, '+ newColorTo +' 50%) repeat scroll 0 0 / 200% 100% rgba(0, 0, 0, 0)');
                 }
                 
                 /** GO! **/
